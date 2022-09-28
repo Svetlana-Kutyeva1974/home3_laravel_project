@@ -24,7 +24,8 @@ class CheckIsLogin
             $user = Auth::user();
             dump('пользователь в системе, перенаправление на окно просмотра данных...');
             sleep(7);
-            return route('user');
+            //return route('user');
+            return redirect()->route('user');
         } else {
             //return redirect()->route('/login');
             dump('пользователь не в системе, перенаправление на окно входа...');
