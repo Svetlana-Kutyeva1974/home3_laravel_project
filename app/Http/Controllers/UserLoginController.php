@@ -19,7 +19,6 @@ class UserLoginController extends Controller
     public function index()
     {
             $user = Auth::user();
-            dump("Отладочная информация о пользователе : ".$user);
             return view('user.user', compact('user'));
     }
 
@@ -36,8 +35,8 @@ class UserLoginController extends Controller
           'password' => Hash::make('секрет'),
           'created_at' => date("Y-m-d H:i:s"),
           'updated_at' => date("Y-m-d H:i:s"),
-      ]);
-              return redirect()->back();
+        ]);
+        return redirect()->back();
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\UserLoginController;
+//use App\Http\Controllers\UserLoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,11 +20,10 @@ Route::get('/', function () {
 });
 
 Route::group([ 'middleware' => 'user'  ],  function () {
-    Route::get('/user', [UserLoginController::class, 'index'])->name('user');
+    Route::get('/user', [\App\Http\Controllers\UserLoginController::class, 'index'])->name('user');
+    //->name('user');дали название роуту
 });
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Route::get('/user', [UserLoginController::class, 'index'])->name('user');//дали название роуту
-
 

@@ -22,13 +22,11 @@ class CheckIsLogin
         if (Auth::check()) {
             // Пользователь вошёл в систему...
             $user = Auth::user();
-            echo('пользователь в системе, перенаправление на окно просмотра данных...');
-            sleep(7);
-            //return route('user');
-            return redirect()->route('user');
-            //return redirect()->route('user', ['user' => $user]);
+            dump('пользователь в системе, перенаправление на окно просмотра данных...');
+            return $next($request);
+            //!!! важно, здесь надо просто продолжить, а не делать редирект
+            //return redirect()->route('user');return redirect()->route('user', ['user' => $user]);
         } else {
-            //return redirect()->route('/login');
             dump('пользователь не в системе, перенаправление на окно входа...');
             sleep(7);
             return redirect('/login');
