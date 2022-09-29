@@ -9,6 +9,22 @@
       {{--<hr style="color: #333; border: 1px solid;width: 50%;"><br>--}}
 </div>
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {{--
 
 @extends('layouts.app')

@@ -26,7 +26,13 @@ Route::group([ 'middleware' => 'user'  ],  function () {
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.verify');
+
+
+
+
+
+
+//Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 //Route::get('/email/verify', function () {
 //    return view('auth.verify-email');
 //})->middleware('auth')->name('verification.notice');
